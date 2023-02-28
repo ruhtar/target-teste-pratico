@@ -1,9 +1,14 @@
 function fibonnaci(n){
-    let sequenciaDeFibonnaci = [0,1];
-    for (let i = 2; i < n; i++) {
-        sequenciaDeFibonnaci.push(sequenciaDeFibonnaci[i-1]+sequenciaDeFibonnaci[i-2])
-    }
-    return sequenciaDeFibonnaci
-}
+    let sequencia = [0,1];
 
-console.log(fibonnaci(11))
+    while(sequencia[sequencia.length-1] < n){
+        sequencia.push(sequencia[sequencia.length-1]+sequencia[sequencia.length-2]);
+    }
+
+    if(sequencia[sequencia.length-1] == n || sequencia[sequencia.length-2] == n){
+        return `O número ${n} pertence a sequência!`;
+    }
+    return `O número ${n} não pertence a sequência...`;
+}
+console.log(fibonnaci(10));
+console.log(fibonnaci(13));
